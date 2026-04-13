@@ -1,0 +1,1883 @@
+<!-- GA Suplementos v2.0 - Atualizado em 2025 - BCAA substituído por Diurético -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA Suplementos – Juntos Somos Mais Fortes</title>
+  <meta name="description" content="GA Suplementos – Os melhores suplementos para você alcançar seus objetivos. Qualidade, variedade e atendimento personalizado em Monteiro-PB." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:      #CC0000;
+      --red-dark: #990000;
+      --red-glow: rgba(204,0,0,.35);
+      --black:    #1a1a1a;
+      --black2:   #111111;
+      --gray:     #2c2c2c;
+      --gray2:    #3a3a3a;
+      --gray-grafite: #404040;
+      --gold:     #D4AF37;
+      --gold-dark: #B8860B;
+      --light:    #f5f5f5;
+      --white:    #ffffff;
+      --font-head: 'Bebas Neue', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
+      --transition: .35s ease;
+      --radius: 12px;
+      --shadow: 0 8px 32px rgba(0,0,0,.45);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: 2px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .section-title span { color: var(--red); }
+
+    .section-subtitle {
+      font-size: .95rem;
+      color: #aaa;
+      margin-top: .6rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       SCROLL ANIMATIONS
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(17,17,17,.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid transparent;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    #navbar.scrolled {
+      border-bottom-color: var(--red);
+      background: rgba(17,17,17,.98);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    /* Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-badge {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-badge img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-text strong {
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .logo-text small {
+      font-size: .6rem;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ccc;
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--red);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--red) !important;
+      color: var(--white) !important;
+      padding: .5rem 1.2rem;
+      border-radius: 6px;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover {
+      background: var(--red-dark) !important;
+      transform: scale(1.05);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--black2);
+      border-top: 2px solid var(--red);
+      padding: 1.2rem 1.5rem 1.5rem;
+      gap: .8rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ccc;
+      padding: .5rem 0;
+      border-bottom: 1px solid #2a2a2a;
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--red); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--black2);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(204,0,0,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(204,0,0,.08) 0%, transparent 60%);
+    }
+
+    /* Animated grid lines */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(204,0,0,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(204,0,0,.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 20s linear infinite;
+    }
+    @keyframes gridMove {
+      0%   { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 0 80px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(204,0,0,.15);
+      border: 1px solid rgba(204,0,0,.4);
+      border-radius: 50px;
+      padding: .4rem 1rem;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag i { font-size: .8rem; }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      line-height: 1.1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 15px;
+    }
+    .hero-title .line-red { color: var(--red); }
+    .hero-title .line-stroke {
+      -webkit-text-stroke: 2px var(--white);
+      color: transparent;
+    }
+
+    .hero-slogan {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 2rem;
+    }
+    .hero-slogan span { color: var(--red); }
+
+    .hero-desc {
+      font-size: .95rem;
+      color: #999;
+      max-width: 480px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: var(--white);
+      font-weight: 800;
+      font-size: .88rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: .9rem 2rem;
+      border-radius: 8px;
+      border: 2px solid var(--red);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px var(--red-glow);
+    }
+    .btn-primary:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px var(--red-glow);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--white);
+      font-weight: 800;
+      font-size: .88rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: .9rem 2rem;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.25);
+      cursor: pointer;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .btn-outline:hover {
+      border-color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      color: var(--red);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: .2rem;
+    }
+
+    /* Hero decoration */
+    .hero-deco {
+      position: absolute;
+      right: -60px; top: 50%;
+      transform: translateY(-50%);
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      border: 2px solid rgba(204,0,0,.15);
+      pointer-events: none;
+    }
+    .hero-deco::before {
+      content: '';
+      position: absolute;
+      inset: 30px;
+      border-radius: 50%;
+      border: 2px solid rgba(204,0,0,.1);
+    }
+    .hero-deco::after {
+      content: '';
+      position: absolute;
+      inset: 70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(204,0,0,.12) 0%, transparent 70%);
+    }
+
+    /* Floating Supplement Jars Decoration */
+    .hero-jars {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40%;
+      height: 80%;
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .jar-item {
+      position: absolute;
+      filter: brightness(0.4) contrast(1.2) opacity(0.15) grayscale(0.5);
+      animation: floatJar 8s ease-in-out infinite;
+      transition: filter 0.5s ease;
+    }
+    
+    .jar-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .jar-1 { top: 5%; right: 5%; animation-delay: 0s; width: clamp(200px, 30vw, 450px); z-index: 3; }
+    .jar-2 { bottom: 10%; right: 35%; animation-delay: -2s; width: clamp(150px, 20vw, 300px); z-index: 2; filter: brightness(0.3) opacity(0.1) blur(1px); }
+    .jar-3 { top: 35%; right: 55%; animation-delay: -4s; width: clamp(120px, 15vw, 250px); z-index: 1; filter: brightness(0.2) opacity(0.08) blur(2px); }
+
+    @keyframes floatJar {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    /* ============================================================
+       BRANDS TICKER
+    ============================================================ */
+    #brands {
+      background: var(--red);
+      padding: .9rem 0;
+      overflow: hidden;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 3rem;
+      animation: ticker 22s linear infinite;
+      white-space: nowrap;
+      width: max-content;
+    }
+    .ticker-track span {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .ticker-track span i { font-size: .6rem; color: rgba(255,255,255,.5); }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       SOBRE NÓS
+    ============================================================ */
+    #sobre {
+      padding: 100px 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    #sobre::before {
+      content: 'GA';
+      position: absolute;
+      right: -40px; top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-head);
+      font-size: 22rem;
+      color: rgba(255,255,255,.02);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .sobre-visual {
+      position: relative;
+    }
+    .sobre-img-box {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: radial-gradient(circle at 50% 50%, rgba(204,0,0,.08) 0%, transparent 70%);
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(204,0,0,.15);
+    }
+    .sobre-img-placeholder {
+      width: 85%;
+      height: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      background: transparent;
+    }
+    .sobre-img-placeholder i {
+      font-size: 8rem;
+      color: var(--red);
+      opacity: .15;
+    }
+    .sobre-img-placeholder p {
+      font-size: .8rem;
+      color: #666;
+      letter-spacing: 1px;
+      margin-top: 2rem;
+    }
+    .sobre-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 30px rgba(204,0,0,.2));
+    }
+
+    .sobre-badge {
+      position: absolute;
+      bottom: -30px; right: -30px;
+      background: var(--red);
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 24px var(--red-glow);
+    }
+    .sobre-badge strong {
+      font-family: var(--font-head);
+      font-size: 3rem;
+      line-height: 1;
+      display: block;
+    }
+    .sobre-badge span {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: .85;
+    }
+
+    .sobre-content .section-title { margin-bottom: 1.2rem; }
+
+    .sobre-text {
+      font-size: .95rem;
+      color: #aaa;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .sobre-features {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      margin-top: 1.8rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #ccc;
+    }
+    .feature-item i {
+      width: 36px; height: 36px;
+      background: rgba(204,0,0,.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       PRODUTOS
+    ============================================================ */
+    #produtos {
+      padding: 100px 0;
+      background: var(--black2);
+    }
+
+    .produtos-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .produtos-header .section-subtitle { margin: .6rem auto 0; }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .produto-card {
+      background: var(--gray);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.06);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+    .produto-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--red);
+      box-shadow: 0 16px 40px rgba(204,0,0,.2);
+    }
+
+    .produto-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .produto-img i {
+      font-size: 3.5rem;
+      transition: transform var(--transition);
+    }
+    .produto-card:hover .produto-img i { transform: scale(1.15); }
+
+    .produto-img-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .6;
+    }
+
+    /* Individual card colors */
+    .card-whey    .produto-img { background: #0a0a0a; }
+    .card-whey    .produto-img i { color: #4fc3f7; }
+    .card-creatina .produto-img { background: #0a0a0a; }
+    .card-creatina .produto-img i { color: #81c784; }
+    .card-pre     .produto-img { background: #0a0a0a; }
+    .card-pre     .produto-img i { color: #ef5350; }
+    .card-vitaminas .produto-img { background: #0a0a0a; }
+    .card-vitaminas .produto-img i { color: #ffb74d; }
+    .card-bcaa    .produto-img { background: linear-gradient(135deg, #1a1a2e 0%, #1e1a2e 100%); }
+    .card-bcaa    .produto-img i { color: #ce93d8; }
+    .card-diuretico .produto-img { background: #0a0a0a; }
+    .card-diuretico .produto-img i { color: #4dd0e1; }
+    .card-hipercalorico .produto-img { background: #0a0a0a; }
+    .card-hipercalorico .produto-img i { color: #ff8a65; }
+    .card-termogenico .produto-img { background: #0a0a0a; }
+    .card-termogenico .produto-img i { color: #ffd54f; }
+    .card-colageno .produto-img { background: #0a0a0a; }
+    .card-colageno .produto-img i { color: #f48fb1; }
+
+    /* Imagens Reais de Produtos */
+    .produto-imagem-real {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 20px;
+      filter: drop-shadow(0 20px 40px rgba(204,0,0,.4));
+      transition: transform var(--transition), filter var(--transition);
+    }
+    .produto-card:hover .produto-imagem-real {
+      transform: scale(1.08) translateY(-5px);
+      filter: drop-shadow(0 25px 50px rgba(204,0,0,.6));
+    }
+
+    .produto-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--black);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: .35rem .7rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(212,175,55,.4);
+    }
+
+    .produto-info {
+      padding: 1.2rem;
+    }
+    .produto-cat {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: .4rem;
+    }
+    .produto-name {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      margin-bottom: .5rem;
+    }
+    .produto-desc {
+      font-size: .78rem;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .produto-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--red);
+      transition: gap var(--transition);
+    }
+    .produto-card:hover .produto-cta { gap: 12px; }
+
+    /* ============================================================
+       POR QUE NOS ESCOLHER
+    ============================================================ */
+    #diferenciais {
+      padding: 100px 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diferenciais-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .diferenciais-header .section-subtitle { margin: .6rem auto 0; }
+
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .diferencial-card {
+      background: var(--gray);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,.06);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .diferencial-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .diferencial-card:hover { transform: translateY(-6px); border-color: rgba(204,0,0,.3); }
+    .diferencial-card:hover::before { transform: scaleX(1); }
+
+    .diferencial-icon {
+      width: 56px; height: 56px;
+      background: rgba(204,0,0,.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--red);
+      margin-bottom: 1.2rem;
+      transition: background var(--transition);
+    }
+    .diferencial-card:hover .diferencial-icon { background: var(--red); color: var(--white); }
+
+    .diferencial-title {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      margin-bottom: .6rem;
+    }
+    .diferencial-text {
+      font-size: .85rem;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       DEPOIMENTOS
+    ============================================================ */
+    #depoimentos {
+      padding: 100px 0;
+      background: var(--black2);
+    }
+
+    .depoimentos-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .depoimentos-header .section-subtitle { margin: .6rem auto 0; }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .depoimento-card {
+      background: var(--gray);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      border: 1px solid rgba(255,255,255,.06);
+      position: relative;
+    }
+    .depoimento-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 12px; right: 20px;
+      font-family: Georgia, serif;
+      font-size: 5rem;
+      color: rgba(204,0,0,.15);
+      line-height: 1;
+    }
+
+    .depoimento-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+    }
+    .depoimento-stars i { color: var(--gold); font-size: .85rem; }
+
+    .depoimento-text {
+      font-size: .88rem;
+      color: #bbb;
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+      font-style: italic;
+    }
+
+    .depoimento-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-weight: 700;
+      font-size: .88rem;
+    }
+    .author-role {
+      font-size: .72rem;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    /* ============================================================
+       CTA BANNER
+    ============================================================ */
+    #cta-banner {
+      padding: 80px 0;
+      background: var(--red);
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .cta-inner .section-title {
+      color: var(--white);
+      margin-bottom: .8rem;
+    }
+    .cta-inner p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.8);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--red);
+      font-weight: 800;
+      font-size: .9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border-radius: 8px;
+      border: 2px solid var(--white);
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+    .btn-white:hover {
+      background: transparent;
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* ============================================================
+       CONTATO / FOOTER
+    ============================================================ */
+    #contato {
+      padding: 100px 0 0;
+      background: var(--black2);
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .contato-info .section-title { margin-bottom: 1.2rem; }
+    .contato-info .section-subtitle { margin-bottom: 2rem; }
+
+    .contato-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .contato-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .contato-item-icon {
+      width: 44px; height: 44px;
+      background: rgba(204,0,0,.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contato-item-text strong {
+      display: block;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: .3rem;
+    }
+    .contato-item-text a,
+    .contato-item-text span {
+      font-size: .95rem;
+      color: #ccc;
+      transition: color var(--transition);
+    }
+    .contato-item-text a:hover { color: var(--red); }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--gray);
+      border: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #aaa;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+    .social-link:hover {
+      background: var(--red);
+      color: var(--white);
+      transform: translateY(-3px);
+      border-color: var(--red);
+    }
+
+    /* Map */
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 380px;
+      border: 2px solid rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(40%) invert(90%) hue-rotate(180deg);
+    }
+
+    /* Footer bottom */
+    .footer-bottom {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 1.5rem 0;
+    }
+    .footer-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p {
+      font-size: .78rem;
+      color: #555;
+    }
+    .footer-bottom p span { color: var(--red); }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo .logo-badge { width: 34px; height: 34px; font-size: 1.1rem; }
+    .footer-logo strong {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    /* ============================================================
+       WHATSAPP FLOAT
+    ============================================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .whatsapp-tooltip {
+      background: var(--black);
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 700;
+      padding: .5rem .9rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,.1);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity .3s, transform .3s;
+      pointer-events: none;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .whatsapp-btn {
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(37,211,102,.4);
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: pulse-wa 2.5s ease-in-out infinite;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 10px 32px rgba(37,211,102,.6);
+      animation: none;
+    }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.4); }
+      50%       { box-shadow: 0 6px 36px rgba(37,211,102,.7); }
+    }
+
+    /* ============================================================
+       BACK TO TOP
+    ============================================================ */
+    .back-top {
+      position: fixed;
+      bottom: 100px; right: 28px;
+      z-index: 998;
+      width: 44px; height: 44px;
+      background: var(--gray);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: .9rem;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s, background var(--transition), color var(--transition);
+      pointer-events: none;
+    }
+    .back-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .back-top:hover { background: var(--red); color: var(--white); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .sobre-visual { max-width: 400px; margin: 0 auto; }
+      .contato-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-deco { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-stats { gap: 1.5rem; }
+      .stat-num { font-size: 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { justify-content: center; }
+      .footer-bottom-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header id="navbar">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <div class="logo-badge">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/AgGsVXlnmKLcToXW.png" alt="GA Suplementos">
+          </div>
+          <div class="logo-text">
+            <strong>GA Suplementos</strong>
+            <small>Juntos Somos Mais Fortes</small>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#sobre" class="mobile-link">Sobre</a>
+      <a href="#produtos" class="mobile-link">Produtos</a>
+      <a href="#diferenciais" class="mobile-link">Diferenciais</a>
+      <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+      <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="mobile-link" style="color:var(--red)"><i class="fab fa-whatsapp"></i> Fale pelo WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-deco"></div>
+    
+    <div class="hero-jars">
+      <div class="jar-item jar-1"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/qFnkLlLQatrGcSoG.png" alt="Whey Protein"></div>
+      <div class="jar-item jar-2"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/egHxjmLRnWBzEBJD.png" alt="Creatine"></div>
+      <div class="jar-item jar-3"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/GejKRUmrspBXmRLv.png" alt="Vitamins"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag reveal">
+          <i class="fas fa-bolt"></i>
+          Suplementos de Alta Performance
+        </div>
+
+        <h1 class="hero-title reveal">
+          <span class="line-red">GA</span>
+          <span class="line-stroke">Suplementos</span>
+        </h1>
+
+        <p class="hero-slogan reveal">
+          <span>Juntos</span> Somos Mais Fortes
+        </p>
+
+        <p class="hero-desc reveal">
+          Os melhores suplementos do mercado para você superar seus limites, alcançar seus objetivos e transformar seu corpo. Qualidade garantida, atendimento personalizado.
+        </p>
+
+        <div class="hero-btns reveal">
+          <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn-primary">
+            <i class="fab fa-whatsapp"></i>
+            Fale Conosco
+          </a>
+          <a href="#produtos" class="btn-outline">
+            <i class="fas fa-dumbbell"></i>
+            Ver Produtos
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item reveal">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Anos de Mercado</div>
+          </div>
+          <div class="stat-item reveal" style="transition-delay:.1s">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Clientes Satisfeitos</div>
+          </div>
+          <div class="stat-item reveal" style="transition-delay:.2s">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Produtos Disponíveis</div>
+          </div>
+          <div class="stat-item reveal" style="transition-delay:.3s">
+            <div class="stat-num">4.9★</div>
+            <div class="stat-label">Avaliação Média</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRANDS TICKER
+  ============================================================ -->
+  <div id="brands">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Whey Protein <i class="fas fa-circle"></i></span>
+      <span>Creatina <i class="fas fa-circle"></i></span>
+      <span>Pré-Treino <i class="fas fa-circle"></i></span>
+      <span>Thermo Cutter <i class="fas fa-circle"></i></span>
+      <span>Vitaminas <i class="fas fa-circle"></i></span>
+      <span>Anabolic Mass <i class="fas fa-circle"></i></span>
+      <span>Lipo Z <i class="fas fa-circle"></i></span>
+      <span>Colágeno <i class="fas fa-circle"></i></span>
+      <span>Ômega 3 <i class="fas fa-circle"></i></span>
+      <span>Albumina <i class="fas fa-circle"></i></span>
+      <span>Whey Protein <i class="fas fa-circle"></i></span>
+      <span>Creatina <i class="fas fa-circle"></i></span>
+      <span>Pré-Treino <i class="fas fa-circle"></i></span>
+      <span>Thermo Cutter <i class="fas fa-circle"></i></span>
+      <span>Vitaminas <i class="fas fa-circle"></i></span>
+      <span>Anabolic Mass <i class="fas fa-circle"></i></span>
+      <span>Lipo Z <i class="fas fa-circle"></i></span>
+      <span>Colágeno <i class="fas fa-circle"></i></span>
+      <span>Ômega 3 <i class="fas fa-circle"></i></span>
+      <span>Albumina <i class="fas fa-circle"></i></span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SOBRE NÓS
+  ============================================================ -->
+  <section id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-visual reveal-left">
+          <div class="sobre-img-box">
+            <div class="sobre-img-placeholder">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/AgGsVXlnmKLcToXW.png" alt="GA Suplementos">
+            </div>
+          </div>
+          <div class="sobre-badge">
+            <strong>4</strong>
+            <span>Anos de<br>Experiência</span>
+          </div>
+        </div>
+
+        <div class="sobre-content reveal-right">
+          <p class="hero-tag" style="display:inline-flex;margin-bottom:1rem">
+            <i class="fas fa-store"></i> Sobre a Loja
+          </p>
+          <h2 class="section-title">Quem Somos <span>Nós?</span></h2>
+          <p class="sobre-text">
+            A <strong>GA Suplementos</strong> nasceu da paixão pelo esporte e pelo bem-estar. Há mais de 4 anos, somos referência em Monteiro-PB no fornecimento de suplementos de alta qualidade para atletas, praticantes de academia e pessoas que buscam uma vida mais saudável.
+          </p>
+          <p class="sobre-text">
+            Nossa missão é simples: <strong>ajudar cada cliente a alcançar seus objetivos</strong> com os melhores produtos do mercado, orientação especializada e um atendimento que vai além da venda. Acreditamos que, juntos, somos mais fortes.
+          </p>
+
+          <div class="sobre-features">
+            <div class="feature-item">
+              <i class="fas fa-check"></i>
+              Produtos 100% originais e certificados
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check"></i>
+              Atendimento personalizado e consultivo
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check"></i>
+              Variedade de marcas nacionais e importadas
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check"></i>
+              Localização central em Monteiro-PB
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUTOS
+  ============================================================ -->
+  <section id="produtos">
+    <div class="container">
+      <div class="produtos-header reveal">
+        <h2 class="section-title">Produtos em <span>Destaque</span></h2>
+        <p class="section-subtitle">Selecionamos as melhores categorias para potencializar seus resultados dentro e fora da academia.</p>
+      </div>
+
+      <div class="produtos-grid">
+
+        <div class="produto-card card-whey reveal" style="transition-delay:.05s">
+          <div class="produto-img">
+            <img src="https://cdn.awsli.com.br/2500x2500/1893/1893286/produto/192202194/byopure_whey_baunilha-ru905ujyq6.png" alt="Whey Protein Byopure" class="produto-imagem-real">
+
+            <span class="produto-badge">Top Venda</span>
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Proteína</p>
+            <h3 class="produto-name">Whey Protein</h3>
+            <p class="produto-desc">Concentrado, isolado e hidrolisado. Recuperação muscular acelerada e ganho de massa.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="produto-card card-creatina reveal" style="transition-delay:.1s">
+          <div class="produto-img">
+            <img src="https://cdn.awsli.com.br/800x800/1893/1893286/produto/383612810/mockup_creatine-nano_iced-mentha-3wjonzsrau.png" alt="Creatina Byopure" class="produto-imagem-real">
+            <span class="produto-badge">Top Venda</span>
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Força & Potência</p>
+            <h3 class="produto-name">Creatina</h3>
+            <p class="produto-desc">Monohidratada e micronizada. Aumento de força, potência e desempenho nos treinos.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="produto-card card-pre reveal" style="transition-delay:.15s">
+          <div class="produto-img">
+            <img src="https://cdn.awsli.com.br/800x800/1893/1893286/produto/333865546/cyclope-fury-phantom-push--01-ddwx0og69u.png" alt="Pré-Treino Cyclope Fury" class="produto-imagem-real">
+            <span class="produto-badge">Novo</span>
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Energia & Foco</p>
+            <h3 class="produto-name">Pré-Treino</h3>
+            <p class="produto-desc">Energia explosiva, foco máximo e pump intenso para treinos de alta performance.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="produto-card card-vitaminas reveal" style="transition-delay:.2s">
+          <div class="produto-img">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/MOUAJmkjDGoivsws.png" alt="Vitaminas Byovit" class="produto-imagem-real">
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Saúde & Bem-estar</p>
+            <h3 class="produto-name">Vitaminas</h3>
+            <p class="produto-desc">Multivitamínicos, Vitamina D, C, Zinco e muito mais para sua saúde em dia.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="produto-card card-diuretico reveal" style="transition-delay:.3s">
+          <div class="produto-img">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/RDiOXXjGwzHoeUdC.png" alt="Thermo Cutter Slim Fullife" class="produto-imagem-real">
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Emagrecimento</p>
+            <h3 class="produto-name">Thermo Cutter Slim</h3>
+            <p class="produto-desc">Termogénico com chá verde, café verde e ingredientes naturais para acelerar o metabolismo e queimar gordura.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>        <div class="produto-card card-hipercalorico reveal" style="transition-delay:.4s">
+          <div class="produto-img">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/RDkOSLlIbsHZBdRV.png" alt="Anabolic Mass Profit" class="produto-imagem-real">
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Ganho de Massa</p>
+            <h3 class="produto-name">Anabolic Mass</h3>
+            <p class="produto-desc">Hipercalórico premium da Profit Laboratórios com whey protein, carboidratos de qualidade e micronutrientes para ganho de massa muscular.</p>       <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="produto-card card-termogenico reveal" style="transition-delay:.5s">
+          <div class="produto-img">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/TUNXSoaOXdcPMIbU.png" alt="Termogênico Lipo Z" class="produto-imagem-real">
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Emagrecimento</p>
+            <h3 class="produto-name">Termogênico</h3>
+            <p class="produto-desc">Acelera o metabolismo, aumenta a queima de calorias e energia para treinos intensos.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="produto-card card-colageno reveal" style="transition-delay:.4s">
+          <div class="produto-img">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/pJBGlQEQJRxApxZn.png" alt="Colágeno Byopure" class="produto-imagem-real">
+          </div>
+          <div class="produto-info">
+            <p class="produto-cat">Articulações & Pele</p>
+            <h3 class="produto-name">Colágeno Type II</h3>
+            <p class="produto-desc">Colágeno tipo II + MSM para saúde das articulações, cartilagens e flexibilidade.</p>
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="produto-cta">
+              Consultar <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DIFERENCIAIS
+  ============================================================ -->
+  <section id="diferenciais">
+    <div class="container">
+      <div class="diferenciais-header reveal">
+        <h2 class="section-title">Por Que Nos <span>Escolher?</span></h2>
+        <p class="section-subtitle">Mais do que uma loja, somos parceiros na sua jornada de evolução.</p>
+      </div>
+
+      <div class="diferenciais-grid">
+
+        <div class="diferencial-card reveal" style="transition-delay:.05s">
+          <div class="diferencial-icon"><i class="fas fa-medal"></i></div>
+          <h3 class="diferencial-title">Qualidade Garantida</h3>
+          <p class="diferencial-text">Trabalhamos apenas com produtos originais, de marcas reconhecidas e com registro na ANVISA. Sua saúde é nossa prioridade.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.1s">
+          <div class="diferencial-icon"><i class="fas fa-boxes"></i></div>
+          <h3 class="diferencial-title">Grande Variedade</h3>
+          <p class="diferencial-text">Mais de 100 produtos disponíveis, das melhores marcas nacionais e importadas. Temos tudo o que você precisa em um só lugar.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.15s">
+          <div class="diferencial-icon"><i class="fas fa-user-tie"></i></div>
+          <h3 class="diferencial-title">Atendimento Personalizado</h3>
+          <p class="diferencial-text">Orientação especializada para ajudar você na escolha ideal, de acordo com seus objetivos, rotina e orçamento.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.2s">
+          <div class="diferencial-icon"><i class="fas fa-tag"></i></div>
+          <h3 class="diferencial-title">Preço Justo</h3>
+          <p class="diferencial-text">Oferecemos os melhores preços da região, com condições especiais de pagamento e promoções exclusivas para clientes fiéis.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.25s">
+          <div class="diferencial-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3 class="diferencial-title">Atendimento via WhatsApp</h3>
+          <p class="diferencial-text">Tire suas dúvidas, faça pedidos e receba orientações diretamente pelo WhatsApp, de forma rápida e prática.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.3s">
+          <div class="diferencial-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3 class="diferencial-title">Localização Central</h3>
+          <p class="diferencial-text">Estamos localizados no coração de Monteiro-PB, de fácil acesso para toda a região do Cariri Paraibano.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.35s">
+          <div class="diferencial-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3 class="diferencial-title">Entrega Rápida</h3>
+          <p class="diferencial-text">Receba seus suplementos no conforto de sua casa com agilidade e segurança em toda a região de Monteiro.</p>
+        </div>
+
+        <div class="diferencial-card reveal" style="transition-delay:.4s">
+          <div class="diferencial-icon"><i class="fas fa-brain"></i></div>
+          <h3 class="diferencial-title">Consultoria Especializada</h3>
+          <p class="diferencial-text">Não vendemos apenas produtos, entregamos conhecimento para que você saiba exatamente o que está consumindo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DEPOIMENTOS
+  ============================================================ -->
+  <section id="depoimentos">
+    <div class="container">
+      <div class="depoimentos-header reveal">
+        <h2 class="section-title">O Que Dizem Nossos <span>Clientes</span></h2>
+        <p class="section-subtitle">A satisfação de quem confia em nós é o nosso maior troféu.</p>
+      </div>
+
+      <div class="depoimentos-grid">
+
+        <div class="depoimento-card reveal" style="transition-delay:.05s">
+          <div class="depoimento-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="depoimento-text">"Melhor loja de suplementos de Monteiro! Atendimento incrível, sempre me orientam sobre os melhores produtos para meu objetivo. Recomendo demais!"</p>
+          <div class="depoimento-author">
+            <div class="author-avatar">LM</div>
+            <div>
+              <p class="author-name">Lucas Mendonça <i class="fas fa-check-circle" style="color:#D4AF37; font-size:0.8em; margin-left:4px;"></i></p>
+              <p class="author-role">Praticante de Musculação</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card reveal" style="transition-delay:.1s">
+          <div class="depoimento-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="depoimento-text">"Compro na GA Suplementos há 2 anos. Produtos sempre originais, preço justo e entrega rápida. O atendimento é super atencioso e me ajuda a escolher o melhor!"</p>
+          <div class="depoimento-author">
+            <div class="author-avatar">AS</div>
+            <div>
+              <p class="author-name">Ana Silva <i class="fas fa-check-circle" style="color:#D4AF37; font-size:0.8em; margin-left:4px;"></i></p>
+              <p class="author-role">Atleta de Crossfit</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card reveal" style="transition-delay:.15s">
+          <div class="depoimento-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="depoimento-text">"Fui indicado por um amigo e não me arrependo. Variedade enorme de produtos, atendimento pelo WhatsApp super prático. Já sou cliente fiel!"</p>
+          <div class="depoimento-author">
+            <div class="author-avatar">RF</div>
+            <div>
+              <p class="author-name">Rafael Ferreira <i class="fas fa-check-circle" style="color:#D4AF37; font-size:0.8em; margin-left:4px;"></i></p>
+              <p class="author-role">Personal Trainer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BANNER
+  ============================================================ -->
+  <section id="cta-banner">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2 class="section-title">Pronto Para <span style="color:rgba(255,255,255,.85)">Evoluir?</span></h2>
+        <p>Entre em contato agora e receba uma consultoria gratuita para escolher os melhores suplementos para o seu objetivo.</p>
+        <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn-white">
+          <i class="fab fa-whatsapp"></i>
+          Falar no WhatsApp Agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTATO / FOOTER
+  ============================================================ -->
+  <section id="contato">
+    <div class="container">
+      <div class="contato-grid">
+        <div class="contato-info reveal-left">
+          <h2 class="section-title">Entre em <span>Contato</span></h2>
+          <p class="section-subtitle">Estamos aqui para te atender da melhor forma. Venha nos visitar ou fale conosco pelo WhatsApp!</p>
+
+          <div class="contato-items">
+            <div class="contato-item">
+              <div class="contato-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contato-item-text">
+                <strong>Endereço</strong>
+                <span>R. Heronides Ramos, Monteiro - PB<br>CEP: 58500-000, Brasil</span>
+              </div>
+            </div>
+
+            <div class="contato-item">
+              <div class="contato-item-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="contato-item-text">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener">(83) 99896-4410</a>
+              </div>
+            </div>
+
+            <div class="contato-item">
+              <div class="contato-item-icon"><i class="fab fa-instagram"></i></div>
+              <div class="contato-item-text">
+                <strong>Instagram</strong>
+                <a href="https://instagram.com/ga_suplementos4" target="_blank" rel="noopener">@ga_suplementos4</a>
+              </div>
+            </div>
+
+            <div class="contato-item">
+              <div class="contato-item-icon"><i class="fas fa-clock"></i></div>
+              <div class="contato-item-text">
+                <strong>Horário de Atendimento</strong>
+                <span>Seg–Sex: 8h às 12h e 14h às 17h<br>Sáb: 8h às 12h e 15h às 18h</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="social-link" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/ga_suplementos4" target="_blank" rel="noopener" class="social-link" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-container reveal-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31463.24!2d-37.1200!3d-7.8900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ac1f3b7b5b5b5b5%3A0x0!2sR.%20Heronides%20Ramos%2C%20Monteiro%20-%20PB%2C%2058500-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização GA Suplementos">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <div class="footer-logo">
+            <div class="logo-badge" style="width:34px;height:34px">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663533684032/AgGsVXlnmKLcToXW.png" alt="GA Suplementos">
+            </div>
+            <strong>GA Suplementos</strong>
+          </div>
+          <p>&copy; 2025 GA Suplementos. Feito com <span>&#10084;</span> em Monteiro-PB.</p>
+          <p style="font-size:.72rem;color:#444">Juntos Somos Mais Fortes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHATSAPP FLOAT
+  ============================================================ -->
+  <div class="whatsapp-float">
+    <span class="whatsapp-tooltip">Fale Conosco!</span>
+    <a href="https://wa.me/5583998964410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20um%20produto%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── Navbar scroll ──────────────────────────────────────────
+    const navbar  = document.getElementById('navbar');
+    const backTop = document.getElementById('backTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+        backTop.classList.add('visible');
+      } else {
+        navbar.classList.remove('scrolled');
+        backTop.classList.remove('visible');
+      }
+    });
+
+    // ── Hamburger ──────────────────────────────────────────────
+    const hamburger   = document.getElementById('hamburger');
+    const mobileMenu  = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // ── Scroll reveal ──────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Smooth scroll for anchor links ─────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── Animated counters ──────────────────────────────────────
+    function animateCounter(el, target, suffix) {
+      let current = 0;
+      const step  = Math.ceil(target / 60);
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = current + suffix;
+      }, 25);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const nums = entry.target.querySelectorAll('.stat-num');
+          const data = [
+            { val: 4,   suffix: '+' },
+            { val: 500, suffix: '+' },
+            { val: 100, suffix: '+' },
+            { val: 4.9, suffix: '★' },
+          ];
+          nums.forEach((num, i) => {
+            if (data[i]) animateCounter(num, data[i].val, data[i].suffix);
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) statsObserver.observe(heroStats);
+  </script>
+</body>
+</html>
